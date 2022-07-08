@@ -37,20 +37,27 @@ class YoutubeMainScreen extends StatelessWidget {
       body: ListView.builder(
         itemCount: 3,
         itemBuilder: (BuildContext context, int index) {
-          return Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                height: 100,
-                child: Image.network(playList[index].imageUrl),
-              ),
-              ViewTitle(playList[index].title, playList[index].date,
-                  playList[index].id, playList[index].idUrl),
-            ],
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  height: 100,
+                  child: Image.network(playList[index].imageUrl),
+                ),
+                const SizedBox(
+                  width: 8,
+                ),
+                ViewTitle(playList[index].title, playList[index].date,
+                    playList[index].id, playList[index].idUrl),
+              ],
+            ),
           );
         },
       ),
+      // backgroundColor: Colors.black,
     );
   }
 }
@@ -67,38 +74,48 @@ class ViewTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            children: [
-              Expanded(
-                child: Container(
-                  // height: 30,
-                  color: Colors.blue,
-                  child: Text(
-                    myTitle,
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 2,
-                  ),
-                ),
+          Container(
+            child: Text(
+              myTitle,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 2,
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
               ),
-              // Container(
-              //   width: 40,
-              //   height: 30,
-              //   color: Colors.green,
-              // ),
-              // Container(
-              //   width: 40,
-              //   height: 30,
-              //   color: Colors.red,
-              // ),
-            ],
+            ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
           Container(
-            height: 30,
-            color: Colors.orange,
+            // color: Colors.orange,
+            child: Text(
+              myDate,
+              style: TextStyle(fontSize: 12),
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+          const SizedBox(
+            height: 8,
+          ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              CircleAvatar(
+                radius: 13,
+                backgroundImage: NetworkImage(myIdUrl),
+              ),
+              const SizedBox(
+                width: 8,
+              ),
+              Text(
+                myId,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ],
           ),
         ],
       ),
