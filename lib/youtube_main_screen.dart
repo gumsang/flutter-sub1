@@ -1,8 +1,4 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:sub_column_row_image/components/youtube_list.dart';
 import 'package:sub_column_row_image/youtube_detail_screen.dart';
 
@@ -26,7 +22,7 @@ class YoutubeMainScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.black,
         // centerTitle: true,
-        title: Text("YouTube"),
+        title: const Text("YouTube"),
         actions: [
           IconButton(onPressed: () {}, icon: Icon(Icons.tv)),
           IconButton(

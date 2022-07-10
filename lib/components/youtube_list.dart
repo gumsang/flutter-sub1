@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class PlayList {
   final String title;
@@ -27,27 +25,22 @@ class ViewTitle extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            child: Text(
-              myTitle,
-              overflow: TextOverflow.ellipsis,
-              maxLines: 2,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
-              ),
+          Text(
+            myTitle,
+            overflow: TextOverflow.ellipsis,
+            maxLines: 2,
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
             ),
           ),
           const SizedBox(
             height: 8,
           ),
-          Container(
-            // color: Colors.orange,
-            child: Text(
-              myDate,
-              style: TextStyle(fontSize: 12),
-              overflow: TextOverflow.ellipsis,
-            ),
+          Text(
+            myDate,
+            style: const TextStyle(fontSize: 12),
+            overflow: TextOverflow.ellipsis,
           ),
           const SizedBox(
             height: 8,
