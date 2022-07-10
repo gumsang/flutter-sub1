@@ -7,7 +7,7 @@ class PlayList {
   final String idUrl;
   final String id;
 
-  const PlayList(this.title, this.date, this.id, this.idUrl, this.imageUrl,
+  PlayList(this.title, this.date, this.id, this.idUrl, this.imageUrl,
       {Key? key});
 }
 

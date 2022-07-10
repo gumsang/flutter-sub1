@@ -8,7 +8,7 @@ class YoutubeMainScreen extends StatelessWidget {
 // PlayList(this.title, this.date, this.id, this.idUrl, this.imageUrl)
   final playList = List<PlayList>.generate(
     1,
-    (i) => const PlayList(
+    (i) => PlayList(
         '[#티전드] (2시간) 수근이 김장 잘하지~^^ 개그 장인 이수근의 인간문화재 등극이 시급합니다🤣 | #신서유기8 #신서유기7',
         '조회수 1,949,215회 · 2022. 5. 15.',
         'tvN D ENT',
