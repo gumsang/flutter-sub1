@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:sub_column_row_image/components/youtube_list.dart';
+import 'package:sub_column_row_image/youtube_detail_screen.dart';
 
 class YoutubeMainScreen extends StatelessWidget {
   YoutubeMainScreen({Key? key}) : super(key: key);
@@ -44,12 +45,20 @@ class YoutubeMainScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              YoutubeDetailScreen(playList[index])),
+                    );
+                  },
                   child: Ink.image(
                     image: NetworkImage(
                       playList[index].imageUrl,
                     ),
                     fit: BoxFit.cover,
+                    //절대값에서 화면 상대값으로 변경해주어야함
                     height: 100,
                     width: 150,
                   ),
