@@ -5,9 +5,9 @@ import 'package:sub_column_row_image/youtube_detail_screen.dart';
 class YoutubeMainScreen extends StatelessWidget {
   YoutubeMainScreen({Key? key}) : super(key: key);
 
-//PlayList(this.title, this.date, this.id, this.idUrl, this.imageUrl)
+// PlayList(this.title, this.date, this.id, this.idUrl, this.imageUrl)
   final playList = List<PlayList>.generate(
-    20,
+    1,
     (i) => const PlayList(
         '[#티전드] (2시간) 수근이 김장 잘하지~^^ 개그 장인 이수근의 인간문화재 등극이 시급합니다🤣 | #신서유기8 #신서유기7',
         '조회수 1,949,215회 · 2022. 5. 15.',
@@ -24,15 +24,15 @@ class YoutubeMainScreen extends StatelessWidget {
         // centerTitle: true,
         title: const Text("YouTube"),
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.tv)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.tv)),
           IconButton(
-              onPressed: () {}, icon: Icon(Icons.notifications_outlined)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.search)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.circle)),
+              onPressed: () {}, icon: const Icon(Icons.notifications_outlined)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.circle)),
         ],
       ),
       body: ListView.builder(
-        itemCount: 20,
+        itemCount: myList.length,
         itemBuilder: (BuildContext context, int index) {
           return Padding(
             padding: const EdgeInsets.all(8.0),
@@ -46,12 +46,12 @@ class YoutubeMainScreen extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                           builder: (context) =>
-                              YoutubeDetailScreen(playList[index])),
+                              YoutubeDetailScreen(myList[index])),
                     );
                   },
                   child: Ink.image(
                     image: NetworkImage(
-                      playList[index].imageUrl,
+                      myList[index].imageUrl,
                     ),
                     fit: BoxFit.cover,
                     //절대값에서 화면 상대값으로 변경해주어야함
@@ -62,8 +62,8 @@ class YoutubeMainScreen extends StatelessWidget {
                 const SizedBox(
                   width: 8,
                 ),
-                ViewTitle(playList[index].title, playList[index].date,
-                    playList[index].id, playList[index].idUrl),
+                ViewTitle(myList[index].title, myList[index].date,
+                    myList[index].id, myList[index].idUrl),
               ],
             ),
           );
