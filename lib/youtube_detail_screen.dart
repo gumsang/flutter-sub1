@@ -11,10 +11,17 @@ class YoutubeDetailScreen extends StatelessWidget {
         title: Text(myPly.title),
       ),
       body: SafeArea(
-        child: Container(
-          child: Image.network(
-            myPly.imageUrl,
-            fit: BoxFit.cover,
+        child: SingleChildScrollView(
+          child: Container(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Image.network(
+                  myPly.imageUrl,
+                  fit: BoxFit.cover,
+                ),
+              ],
+            ),
           ),
         ),
       ),
