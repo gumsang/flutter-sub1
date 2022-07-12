@@ -5,17 +5,6 @@ import 'package:sub_column_row_image/youtube_detail_screen.dart';
 class YoutubeMainScreen extends StatelessWidget {
   YoutubeMainScreen({Key? key}) : super(key: key);
 
-// PlayList(this.title, this.date, this.id, this.idUrl, this.imageUrl)
-  final playList = List<PlayList>.generate(
-    1,
-    (i) => PlayList(
-        '[#티전드] (2시간) 수근이 김장 잘하지~^^ 개그 장인 이수근의 인간문화재 등극이 시급합니다🤣 | #신서유기8 #신서유기7',
-        '조회수 1,949,215회 · 2022. 5. 15.',
-        'tvN D ENT',
-        'https://yt3.ggpht.com/aQq9OjYxeYTQ9F3sgkmfmv0gH1bigSr5tJLyDR11RJFa9bGxgci5Jw0Y9tDP7eNBm8AQqyx1Qi8=s176-c-k-c0x00ffffff-no-rj',
-        'https://i.ytimg.com/vi/Q_TAgPgfoPk/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLA2ePlCc5TzkDTTkQ0JAwLlEwRGdg'),
-  );
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

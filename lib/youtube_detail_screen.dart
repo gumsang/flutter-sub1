@@ -170,7 +170,7 @@ class YoutubeDetailScreen extends StatelessWidget {
                               fontSize: 15,
                             ),
                           ),
-                        )
+                        ),
                       ],
                     ),
 
